@@ -1,0 +1,12 @@
+Instructions on building ELK stack with ansible.
+
+Build new VM in your cloud environment.
+Create security rule to allow SSH into the new VM from the jump-box.
+From the docker container on the jump-box run yaml playbook to install ELK stack on new VM.
+command: ansible-playbook my-playbook.yml
+
+From docker container, install filebeat & metricbeat on webservers web-1 & web-2.
+command: ansible-playbook filebeat-playbook.yml
+ansible-playbook metric-playbook.yml
+
+Browse to Elk server public IP to make sure kibana is running & receiving data from web-1 and web-2.
